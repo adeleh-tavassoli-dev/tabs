@@ -1,0 +1,80 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#8E7CFF,#C3B8FF);
+}
+
+.container{
+    width:900px;
+    background:#fff;
+    border-radius:20px;
+    padding:30px;
+    box-shadow:0 15px 30px rgba(0,0,0,.15);
+}
+
+.tabs{
+    display:grid;
+    grid-template-columns:120px;
+    gap:30px;
+}
+
+.tabs input{
+    display:none;
+}
+
+.tabs label{
+    display:block;
+    padding:15px 20px;
+    margin-bottom:10px;
+    border-radius:12px;
+    cursor:pointer;
+    font-weight:600;
+    transition:.3s;
+    background:#f3f4f6;
+}
+
+.tabs label:hover{
+    background:#e5e7eb;
+}
+
+.content{
+    display:none;
+    grid-column:2;
+    grid-row:1;
+}
+
+.content h2{
+    margin-bottom:15px;
+    color:#333;
+}
+
+.content p{
+    line-height:1.8;
+    color:#666;
+}
+
+/* Active Tab */
+
+#home:checked ~ label[for="home"],
+#services:checked ~ label[for="services"],
+#projects:checked ~ label[for="projects"],
+#contact:checked ~ label[for="contact"]{
+    background:#6C63FF;
+    color:white;
+}
+
+#home:checked ~ .content-home,
+#services:checked ~ .content-services,
+#projects:checked ~ .content-projects,
+#contact:checked ~ .content-contact{
+    display:block;
+}
